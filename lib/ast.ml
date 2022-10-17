@@ -1,4 +1,5 @@
 type atom = Int of int | String of string | Keyword of string | Optn of string
+type expression = |
 type program = Program of atom list
 
 let dump_atom = function

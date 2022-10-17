@@ -1,5 +1,5 @@
-let parse s =
-  let lexbuf = Lexing.from_string s in
+let parse str =
+  let lexbuf = Lexing.from_string str in
   try Parser.program Scanner.tokenize lexbuf with
   | Scanner.SyntaxError msg -> raise (Failure msg)
   | Parser.Error -> raise (Failure "Error")

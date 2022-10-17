@@ -2,5 +2,5 @@
  (public_name cpcc)
  (name main)
  (libraries cmdliner cpcc)
- 
- (instrumentation (backend bisect_ppx)))
+ (instrumentation
+  (backend bisect_ppx)))

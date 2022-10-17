@@ -6,4 +6,5 @@
 (library
  (name cpcc)
  (modules parser scanner ast cpcc)
- (instrumentation (backend bisect_ppx)))
+ (instrumentation
+  (backend bisect_ppx)))

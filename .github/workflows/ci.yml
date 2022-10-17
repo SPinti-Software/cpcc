@@ -6,10 +6,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-          - windows-latest
+        os: [macos-latest, ubuntu-latest, windows-latest]
         ocaml-compiler:
           - 4.14.x
 
@@ -28,4 +25,13 @@ jobs:
 
       - run: opam exec -- dune build
 
-      - run: opam exec -- dune runtest
+      - if: ${{ !contains(matrix.os, 'ubuntu') }}
+        name: run test
+        run: opam exec -- dune runtest
+
+      - if: ${{ contains(matrix.os, 'ubuntu') }}
+        name: run test with coverage
+        run: |
+          BISECT_FILE=`pwd`/bisect opam exec -- dune runtest --force --instrument-with bisect_ppx
+          opam exec -- bisect-ppx-report send-to Codecov
+
