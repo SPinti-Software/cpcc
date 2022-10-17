@@ -1,6 +1,8 @@
-let parse f s =
+let parse s =
   let lexbuf = Lexing.from_string s in
-  try f Scanner.tokenize lexbuf with Parser.Error -> raise (Failure "Error")
+  try Parser.program Scanner.tokenize lexbuf with
+  | Scanner.SyntaxError msg -> raise (Failure msg)
+  | Parser.Error -> raise (Failure "Error")
 
 let read_file file =
   let ch = open_in file in
@@ -8,5 +10,4 @@ let read_file file =
   close_in ch;
   s
 
-let compile file =
-    Ast.dump (parse Parser.program (read_file file))
+let compile file = Ast.dump (parse (read_file file))
