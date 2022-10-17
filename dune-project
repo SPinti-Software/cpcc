@@ -2,16 +2,17 @@
 
 (name cpcc)
 
+(cram enable)
+
 (generate_opam_files true)
 
 (source
  (github SPinti-Software/cpcc))
 
 (authors "d0p1")
-
 (maintainers "d0p1")
 
-(license LICENSE)
+(license "BSD-3-Clause")
 
 ;(documentation https://url/to/documentation)
 
@@ -21,7 +22,11 @@
  (name cpcc)
  (synopsis "CpcdosC+ Compiler")
  (description "CpcdosC+ reference compiler")
- (depends ocaml dune cmdliner)
+ (depends
+  ocaml
+  dune
+  cmdliner
+  (alcotest :with-test))
  (tags
   (topics compiler cpcdos)))
 

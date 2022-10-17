@@ -1,2 +1,6 @@
 (test
- (name cpcc))
+ (name cpcc)
+ (libraries alcotest cpcc))
+
+(cram
+ (deps %{bin:cpcc}))

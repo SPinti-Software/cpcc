@@ -4,7 +4,7 @@ synopsis: "CpcdosC+ Compiler"
 description: "CpcdosC+ reference compiler"
 maintainer: ["d0p1"]
 authors: ["d0p1"]
-license: "LICENSE"
+license: "BSD-3-Clause"
 tags: ["topics" "compiler" "cpcdos"]
 homepage: "https://github.com/SPinti-Software/cpcc"
 bug-reports: "https://github.com/SPinti-Software/cpcc/issues"
@@ -12,6 +12,7 @@ depends: [
   "ocaml"
   "dune" {>= "3.4"}
   "cmdliner"
+  "alcotest" {with-test}
   "odoc" {with-doc}
 ]
 build: [

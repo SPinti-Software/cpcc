@@ -3,7 +3,7 @@
 %}
 
 %token <int> INT
-%token <string> STRING KEYWORD
+%token <string> STRING KEYWORD OPTN
 %token EOF
 
 %start <Ast.program> program
@@ -18,4 +18,5 @@ atom:
 	| i=INT { Int i }
 	| s=STRING { String s }
     | k=KEYWORD { Keyword k }
+    | o=OPTN { Optn o }
 	;
