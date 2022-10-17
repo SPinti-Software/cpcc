@@ -12,7 +12,9 @@ depends: [
   "ocaml"
   "dune" {>= "3.4"}
   "cmdliner"
+  "menhir"
   "alcotest" {with-test}
+  "bisect_ppx" {with-test}
   "odoc" {with-doc}
 ]
 build: [

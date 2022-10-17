@@ -1,4 +1,6 @@
 (executable
  (public_name cpcc)
  (name main)
- (libraries cmdliner cpcc))
+ (libraries cmdliner cpcc)
+ 
+ (instrumentation (backend bisect_ppx)))
