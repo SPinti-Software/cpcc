@@ -1,0 +1,8 @@
+(menhir
+ (modules parser))
+
+(ocamllex scanner)
+
+(library
+ (name cpcc)
+ (modules parser scanner ast cpcc))
