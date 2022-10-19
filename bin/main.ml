@@ -2,6 +2,16 @@ open Cmdliner
 
 let version = "%%VERSION%%"
 
+(*
+let output =
+  let doc = "Place the output into <file>." in
+  Arg.(value & opt string "a.out" & info [ "o" ] ~docv:"<file>" ~doc)
+
+let target =
+  let doc = "Generate code for the given target" in
+  Arg.(value & opt (some string) None & info [ "target" ] ~docv:"<value>" ~doc)
+*)
+
 let cpcc files =
   print_endline (String.concat ", " (List.map Cpcc.compile files))
 

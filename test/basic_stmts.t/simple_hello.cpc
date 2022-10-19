@@ -1,0 +1,7 @@
+Txt/ "Hello friends :^)"
+
+' CC+ is case insensitive for keyword and variables names
+' so "TXT/" == "txT" == "TxT"
+
+TXT/ "All your code base are belong to us !"
+
